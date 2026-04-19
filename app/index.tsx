@@ -1,28 +1,30 @@
-import { Platform, Text, View } from "react-native";
-import * as Device from "expo-device"
-export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Text>
-        Running On : {Platform.OS}
-      </Text>
-      <Text>
-        Device Name : {Device.modelName}
-      </Text>
-      <Text>
-        Device Model : {Device.brand}
-      </Text>
-      <Text>
-        Device os version : {Device.osVersion}
-      </Text>
+import { StyleSheet, Text, View } from 'react-native';
 
+export default function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>MacroZone</Text>
+      <Text style={styles.date}>Monday, March 16</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a2e',
+    paddingTop: 60,
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#ffffff',
+  },
+  date: {
+    fontSize: 14,
+    color: '#a0a0b0',
+    marginTop: 4,
+    marginBottom: 30,
+  },
+});
